@@ -76,4 +76,47 @@ $(document).ready(function () {
             })
         }
     })
+
+    $("#login-form").on("submit", function() {
+        const email = $("#log_email"),
+              user_pass = $("#log_pass");
+        let status = true;
+
+        if (email.val() == "" || user_pass.val() == ""){
+
+            email.addClass("border-danger");
+            $("#e_error").html("<span class='text-danger'>All fields are required!</span>");
+
+            user_pass.addClass("border-danger");
+            $("#p_error").html("<span class='text-danger'>All fields are required!</span>");
+
+            status = false;
+
+        } else {
+            email.removeClass("border-danger");
+            $("#e_error").html("");
+
+            user_pass.removeClass("border-danger");
+            $("#p_error").html("");
+
+        }
+
+        if (status){
+            $.ajax({
+                url: "../includes/process.php",
+                method: "POST",
+                data: $("#login-form").serialize(),
+                success: function (res){
+                    if (res === "NOT_REGISTERED"){
+                        alert("Error username or password, please try again!");
+                    } else if (res === "INCORRECT_PASSWORD"){
+                        alert("Error username or password, please try again!");
+                    } else {
+                        window.location.href = encodeURI("../dashboard.php");
+                    }
+                }
+            })
+        }
+
+    });
 })

@@ -39,11 +39,11 @@
     <div class="card mx-auto" style="width: 18rem;">
         <img src="images/login.png" style="width:60%;" class="card-img-top mx-auto" alt="Login Now!">
         <div class="card-body">
-            <form id="form_register" onsubmit="return false;">
+            <form id="login-form" onsubmit="return false;">
                 <div class="form-group">
                     <label for="log_email">Email address</label>
                     <input type="email" class="form-control" id="log_email" name="log_email" placeholder="Enter email">
-                    <small id="e_error" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small id="e_error" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="log_pass">Password</label>

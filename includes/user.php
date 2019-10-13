@@ -56,7 +56,7 @@ class User {
         $result = $pre_stmt->get_result();
 
         if ($result->num_rows < 1){
-            return "NOT REGISTERED";
+            return "NOT_REGISTERED";
         } else {
 
             $row = $result->fetch_assoc();
@@ -77,13 +77,13 @@ class User {
                     return 0;
                 }
             } else {
-                return "INCORRECT_PASSWORD!";
+                return "INCORRECT_PASSWORD";
             }
         }
     }
 }
 
-$user = new User();
+// $user = new User();
 // echo $user->createUserAccount("Kim","kimmy@gmail.com","123456789","admin");
 // echo $user->userLogin("kim@gmail.com","123456789");
 
