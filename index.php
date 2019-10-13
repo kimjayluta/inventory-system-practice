@@ -24,17 +24,31 @@
 <!-- End Of Navbar -->
 <!-- Login Form -->
 <div class="container pt-5">
+    <?php
+        if (isset($_GET["msg"]) && !empty($_GET["msg"])){
+            ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?php echo $_GET["msg"]?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+            <?php
+        }
+    ?>
     <div class="card mx-auto" style="width: 18rem;">
         <img src="images/login.png" style="width:60%;" class="card-img-top mx-auto" alt="Login Now!">
         <div class="card-body">
-            <form>
+            <form id="form_register" onsubmit="return false;">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="log_email">Email address</label>
+                    <input type="email" class="form-control" id="log_email" name="log_email" placeholder="Enter email">
+                    <small id="e_error" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="log_pass">Password</label>
+                    <input type="password" class="form-control" id="log_pass" name="log_pass" placeholder="Password">
+                    <small id="p_error" class="form-text text-muted"></small>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
                 <span><a href="register.php">Create an account now!</a></span>

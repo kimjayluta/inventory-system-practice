@@ -23,7 +23,7 @@
         <div class="card-body">
             <form id="register_form" onsubmit="return false" autocomplete="off">
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Full name</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="Enter Username">
                     <small id="u_error" class="form-text text-muted"></small>
                 </div>

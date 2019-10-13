@@ -30,7 +30,6 @@ class User {
         if ($this->emailExists($email)){
             return "EMAIL_ALREADY_EXISTS";
         } else {
-
             $pass_hash = password_hash($password, PASSWORD_BCRYPT, ["cost"=>8]);
             $date = date("Y-m-d");
             $notes = "Notes";
@@ -85,7 +84,7 @@ class User {
 }
 
 $user = new User();
-// echo $user->createUserAccount("Kim","kim@gmail.com","123456789","admin");
-echo $user->userLogin("kim@gmail.com","123456789");
+// echo $user->createUserAccount("Kim","kimmy@gmail.com","123456789","admin");
+// echo $user->userLogin("kim@gmail.com","123456789");
 
 ?>
