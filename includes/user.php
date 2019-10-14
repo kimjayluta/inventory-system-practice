@@ -46,9 +46,6 @@ class User {
     }
 
     public function userLogin($email, $password){
-    //     $sql = "SELECT `id`,`username`,`password`,`last_login` FROM `users` WHERE `email` = '$email'";
-    //     echo $sql;
-    //     exit;
         $pre_stmt = $this->_CON->prepare("SELECT `id`,`usn`,`pass`,`last_login` FROM `users` WHERE `email` = ?");
         $pre_stmt->bind_param("s",$email);
         $pre_stmt->execute() or die($this->_CON->error);
@@ -85,5 +82,6 @@ class User {
 // $user = new User();
 // echo $user->createUserAccount("Kim","kimmy@gmail.com","123456789","admin");
 // echo $user->userLogin("kim@gmail.com","123456789");
+// print_r($_SESSION);
 
 ?>
