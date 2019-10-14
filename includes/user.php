@@ -33,8 +33,7 @@ class User {
             $pass_hash = password_hash($password, PASSWORD_BCRYPT, ["cost"=>8]);
             $date = date("Y-m-d");
             $notes = "Notes";
-            $pre_stmt = $this->_CON->prepare("INSERT INTO `users`(`usn`, `email`, `pass`, `user_type`, `register_date`, `last_login`, `notes`)
-                                                VALUES (?,?,?,?,?,?,?)");
+            $pre_stmt = $this->_CON->prepare("INSERT INTO `users`(`usn`, `email`, `pass`, `user_type`, `register_date`,         `last_login`, `notes`)VALUES (?,?,?,?,?,?,?)");
             $pre_stmt->bind_param("sssssss",$username, $email, $pass_hash, $userType, $date, $date, $notes);
             $result = $pre_stmt->execute() or die($this->_CON->error);
             if ($result){

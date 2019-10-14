@@ -117,6 +117,18 @@ $(document).ready(function () {
                 }
             })
         }
-
     });
+
+    fetch_category();
+    function fetch_category(){
+        $.ajax({
+            url: "../includes/process.php",
+            method: "POST",
+            data: {getCategory:1},
+            success: function(res){
+                let root = "<option value='0'>Root</option>";
+                $("#parent_category").html(root + res);
+            }
+        })
+    }
 })
