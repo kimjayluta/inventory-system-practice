@@ -67,8 +67,8 @@ if (!isset($_SESSION["userId"])){
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <iframe src="http://free.timeanddate.com/clock/i6xtxnwa/n145/szw160/szh160/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/facfff/fnu2/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hwm2/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3"
-                         frameborder="0" width="160" height="160"></iframe>
+                        <!-- <iframe src="http://free.timeanddate.com/clock/i6xtxnwa/n145/szw160/szh160/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/facfff/fnu2/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hwm2/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3"
+                         frameborder="0" width="160" height="160"></iframe> -->
                     </div>
                 </div>
             </div>

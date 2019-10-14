@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // Creating an account functionality
     $("#register_form").on("submit",function (){
         const name = $("#name");
         const email = $("#email");
@@ -77,6 +78,7 @@ $(document).ready(function () {
         }
     })
 
+    // Login functionality
     $("#login-form").on("submit", function() {
         const email = $("#log_email"),
               user_pass = $("#log_pass");
@@ -119,6 +121,7 @@ $(document).ready(function () {
         }
     });
 
+    // Fetching the parent categories and printing to category modal.
     fetch_category();
     function fetch_category(){
         $.ajax({
@@ -131,4 +134,30 @@ $(document).ready(function () {
             }
         })
     }
+
+    // Adding new category function
+    $("#category-form").on("submit", function(){
+        if ($("#category-name").val() == ""){
+            $("#category-name").addClass("border-danger");
+            $("#n_error").html("<span class='text-danger'>Please Enter a category name.</span>")
+            return false;
+
+        } else {
+            $.ajax({
+                url: "../includes/process.php",
+                method: "POST",
+                data: $("#category-form").serialize(),
+                success: function(res) {
+                    if (res == "CATEGORY_ADDED"){
+
+                        $("#category-name").val("");
+                        $("#category-name").addClass("border-success");
+                        $("#n_error").html("<span class='text-success'>Added new category!</span>")
+                    } else {
+                        alert(res);
+                    }
+                }
+            })
+        }
+    });
 })

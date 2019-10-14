@@ -12,7 +12,7 @@
         <form id="category-form" onsubmit="return false;">
           <div class="form-group">
             <label>Category Name: </label>
-            <input type="text" class="form-control" name="category-name" id="category-name" placeholder="Enter Category name">
+            <input type="text" class="form-control" name="category-name" id="category-name" placeholder="Enter Category Name">
             <small id="n_error" class="form-text text-muted"></small>
           </div>
           <div class="form-group">

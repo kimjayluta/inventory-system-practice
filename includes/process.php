@@ -25,8 +25,16 @@ if (isset($_POST["getCategory"])){
     $obj = new DBOperation();
     $rows = $obj->getAllRecord("categories");
     foreach($rows as $row){
-        echo "<option value='".$row["parent_category"]."'>".$row["category_name"]."</option>";
+        echo "<option value='".$row["id"]."'>".$row["category_name"]."</option>";
     }
+    exit;
+}
+
+// Adding new Category handler
+if (isset($_POST["category-name"], $_POST["parent_category"])){
+    $obj = new DBOperation();
+    $result = $obj->addCategory($_POST["parent_category"],$_POST["category-name"]);
+    echo $result;
     exit;
 }
 ?>
