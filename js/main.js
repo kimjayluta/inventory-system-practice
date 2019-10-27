@@ -1,4 +1,17 @@
 $(document).ready(function () {
+    /*
+    --   $$$$$$\  $$\
+    --  $$  __$$\ \__|
+    --  $$ /  \__|$$\  $$$$$$\  $$$$$$$\  $$\   $$\  $$$$$$\
+    --  \$$$$$$\  $$ |$$  __$$\ $$  __$$\ $$ |  $$ |$$  __$$\
+    --   \____$$\ $$ |$$ /  $$ |$$ |  $$ |$$ |  $$ |$$ /  $$ |
+    --  $$\   $$ |$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |
+    --  \$$$$$$  |$$ |\$$$$$$$ |$$ |  $$ |\$$$$$$  |$$$$$$$  |
+    --   \______/ \__| \____$$ |\__|  \__| \______/ $$  ____/
+    --                $$\   $$ |                    $$ |
+    --                \$$$$$$  |                    $$ |
+    --                 \______/                     \__|
+    */
     // Creating an account functionality
     $("#register_form").on("submit",function (){
         const name = $("#name");
@@ -78,6 +91,20 @@ $(document).ready(function () {
         }
     })
 
+    /*
+    --  $$\                         $$\
+    --  $$ |                        \__|
+    --  $$ |     $$$$$$\   $$$$$$\  $$\ $$$$$$$\
+    --  $$ |    $$  __$$\ $$  __$$\ $$ |$$  __$$\
+    --  $$ |    $$ /  $$ |$$ /  $$ |$$ |$$ |  $$ |
+    --  $$ |    $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |
+    --  $$$$$$$$\$$$$$$  |\$$$$$$$ |$$ |$$ |  $$ |
+    --  \________\______/  \____$$ |\__|\__|  \__|
+    --                    $$\   $$ |
+    --                    \$$$$$$  |
+    --                     \______/
+    */
+
     // Login functionality
     $("#login-form").on("submit", function() {
         const email = $("#log_email"),
@@ -135,6 +162,18 @@ $(document).ready(function () {
         })
     }
 
+
+    /**
+        --   $$$$$$\        $$\       $$\       $$$$$$$$\                             $$\     $$\
+        --  $$  __$$\       $$ |      $$ |      $$  _____|                            $$ |    \__|
+        --  $$ /  $$ | $$$$$$$ | $$$$$$$ |      $$ |   $$\   $$\ $$$$$$$\   $$$$$$$\$$$$$$\   $$\  $$$$$$\  $$$$$$$\   $$$$$$$\
+        --  $$$$$$$$ |$$  __$$ |$$  __$$ |      $$$$$\ $$ |  $$ |$$  __$$\ $$  _____\_$$  _|  $$ |$$  __$$\ $$  __$$\ $$  _____|
+        --  $$  __$$ |$$ /  $$ |$$ /  $$ |      $$  __|$$ |  $$ |$$ |  $$ |$$ /       $$ |    $$ |$$ /  $$ |$$ |  $$ |\$$$$$$\
+        --  $$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |   $$ |  $$ |$$ |  $$ |$$ |       $$ |$$\ $$ |$$ |  $$ |$$ |  $$ | \____$$\
+        --  $$ |  $$ |\$$$$$$$ |\$$$$$$$ |      $$ |   \$$$$$$  |$$ |  $$ |\$$$$$$$\  \$$$$  |$$ |\$$$$$$  |$$ |  $$ |$$$$$$$  |
+        --  \__|  \__| \_______| \_______|      \__|    \______/ \__|  \__| \_______|  \____/ \__| \______/ \__|  \__|\_______/
+    **/
+
     // Adding new category function
     $("#category-form").on("submit", function(){
         if ($("#category-name").val() == ""){
@@ -153,6 +192,30 @@ $(document).ready(function () {
                         $("#category-name").val("");
                         $("#category-name").addClass("border-success");
                         $("#n_error").html("<span class='text-success'>Added new category!</span>")
+                    } else {
+                        alert(res);
+                    }
+                }
+            })
+        }
+    });
+
+    // Adding Brands functionality
+    $("#brand-form").on("submit", function(){
+        if ($("#brand-name").val() == ""){
+            $("#brand-name").addClass("border-danger");
+            $("#brand_error").html("<span class='text-danger'>Please enter a Brand name.</span>")
+        } else {
+
+            $.ajax({
+                url: "../includes/process.php",
+                method: "POST",
+                data: $("#brand-form").serialize(),
+                success: function(res) {
+                    if (res == "BRAND_ADDED"){
+                        $("#brand-name").val("");
+                        $("#brand-name").addClass("border-success");
+                        $("#brand_error").html("<span class='text-success'>Added new Brand!</span>")
                     } else {
                         alert(res);
                     }

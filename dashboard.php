@@ -115,7 +115,7 @@ if (!isset($_SESSION["userId"])){
 <?php include_once("templates/category.php");?>
 <?php include_once("templates/brands.php");?>
 <?php include_once("templates/products.php");?>
-
+<!-- JS Functionalities -->
 <script src="js/main.js"></script>
 <!-- Bootstrap Cdn Js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

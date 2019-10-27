@@ -9,11 +9,15 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <form id="brand-form" onsubmit="return false;">
+          <div class="form-group">
+            <label>Brand Name: </label>
+            <input type="text" class="form-control" name="brand-name" id="brand-name" placeholder="Enter Brand Name">
+            <small id="brand_error" class="form-text text-muted"></small>
+          </div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
     </div>
   </div>

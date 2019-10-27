@@ -37,4 +37,13 @@ if (isset($_POST["category-name"], $_POST["parent_category"])){
     echo $result;
     exit;
 }
+
+// Adding new Category handler
+if (isset($_POST["brand-name"])){
+    $obj = new DBOperation();
+    $result = $obj->addBrand($_POST["brand-name"]);
+    echo $result;
+    exit;
+}
+
 ?>
