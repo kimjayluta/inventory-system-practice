@@ -157,7 +157,9 @@ $(document).ready(function () {
             data: {getCategory:1},
             success: function(res){
                 let root = "<option value='0'>Root</option>";
+                let choose = "<option value='0'>Choose category</option>";
                 $("#parent_category").html(root + res);
+                $("#select-category").html(choose + res);
             }
         })
     }
